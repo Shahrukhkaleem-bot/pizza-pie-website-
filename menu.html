@@ -1,0 +1,177 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Menu</title>
+    <link rel="stylesheet" href="menu.css">
+    Box Icons
+    <link href='https://unpkg.com/boxicons/css/boxicons.min.css' rel='stylesheet'>
+
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+</head>
+<body>
+    
+    <header>
+        <a href="pizza.html" class="logo">Pizza Pie</a>
+        <ul class="navbar">
+            <li><a href="Home Page.html">Home</a></li>
+            <li><a href="pizza.html#about">About</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
+            <a href="addtocart.html">Add to Cart</a>
+        </ul>
+    </header>
+
+    
+    <section class="menu-section">
+        <div class="menu-heading">
+            <h2>Our Delicious Pizzas</h2>
+        </div>
+        <div class="menu-container">
+
+            <div class="menu-box">
+                <img src="https://g-cdn.blinkco.io/ordering-system/55485/dish_image/1732959630.jpg" alt="Super Max">
+                <div>
+                    <h3>Super Max</h3>
+                    <p>A delightful blend of cheeses on a perfectly baked crust.</p>
+                    <span>$30.05</span>
+                    <a href="checkout.html">Order Now</a>
+            <a href="addtocart.html">Add to Cart</a>
+
+                </div>
+            </div>
+            
+            <div class="menu-box">
+                <img src="https://g-cdn.blinkco.io/ordering-system/55485/dish_image/1732959916.jpg" alt="Kebab Stuffer">
+                <div>
+                    <h3>Kebab Stuffer</h3>
+                    <p>A burst of tropical flavors with pineapple and ham.</p>
+                    <span>$42.05</span>
+                    <a href="checkout.html">Order Now</a>
+            <a href="addtocart.html">Add to Cart</a>
+
+                </div>
+            </div>
+            
+            <div class="menu-box">
+                <img src="https://g-cdn.blinkco.io/ordering-system/55485/dish_image/1732960377.jpg" alt="Farmhouse Delight">
+                <div>
+                    <h3>Farmhouse Delight</h3>
+                    <p>Loaded with mac and cheese, a treat for pasta lovers.</p>
+                    <span>$12.05</span>
+                    <a href="checkout.html">Order Now</a>
+            <a href="addtocart.html">Add to Cart</a>
+
+                </div>
+            </div>
+            
+            <div class="menu-box">
+                <img src="https://g-cdn.blinkco.io/ordering-system/55485/dish_image/1734704574.jpg" alt="Veggie Pizza">
+                <div>
+                    <h3>Veggie Pizza</h3>
+                    <p>Fresh vegetables on a crispy crust for a healthy delight.</p>
+                    <span>$20.00</span>
+                    <a href="checkout.html">Order Now</a>
+            <a href="addtocart.html">Add to Cart</a>
+
+                </div>
+            </div>
+        
+            <div class="menu-box">
+                <img src="https://g-cdn.blinkco.io/ordering-system/55485/dish_image/1732961481.jpg" alt="BBQ Chicken Pizza">
+                <div>
+                    <h3>BBQ Chicken Pizza</h3>
+                    <p>Succulent chicken topped with tangy BBQ sauce.</p>
+                    <span>$25.00</span>
+                    <a href="checkout.html">Order Now</a>
+            <a href="addtocart.html">Add to Cart</a>
+
+                </div>
+            </div>
+            
+            <div class="menu-box">
+                <img src="https://g-cdn.blinkco.io/ordering-system/55485/dish_image/1732979649.jpg" alt="Peri Peri Pizza">
+                <div>
+                    <h3>Peri Peri Pizza</h3>
+                    <p>A classic favorite with generous peri peri toppings.</p>
+                    <span>$18.50</span>
+                    <a href="checkout.html">Order Now</a>
+            <a href="addtocart.html">Add to Cart</a>
+
+                </div>
+            </div>
+    
+            <div class="menu-box">
+                <img src="https://g-cdn.blinkco.io/ordering-system/55485/dish_image/1732959204.jpg" alt="Cheese Max">
+                <div>
+                    <h3>Cheese Max</h3>
+                    <p>Loaded with Mozzarella cheese on top of tomato sauce.</p>
+                    <span>$18.50</span>
+                    <a href="checkout.html">Order Now</a>
+            <a href="addtocart.html">Add to Cart</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <label for="name">Enter Your Name</label>
+            <input type="text" name="name" id="name" onchange="fetchJoke()">
+            <h2>Joke for <span id="userName"></span></h2>
+            <p id="jokeText"></p>
+            <button onclick="fetchJoke()">New Joke</button>
+        </div>
+    </section>
+
+    <script>
+        
+        const sr = ScrollReveal({
+            origin: 'top', 
+            distance: '40px', 
+            duration: 1000,
+            reset: true 
+        });
+
+        
+        sr.reveal('.menu-heading', { delay: 200 });
+        sr.reveal('.menu-box', { interval: 200 });
+
+        
+        const fetchJoke = async () => {
+            var name = document.getElementById('name')?.value || 'You';
+            document.getElementById('userName').innerHTML = name;
+            const url = 'https://daddyjokes.p.rapidapi.com/random';
+            const options = {
+                method: 'GET',
+                headers: {
+                    'x-rapidapi-key': '5c0b01dd07msh4b00f51b6466d12p123b6cjsne99cffe3d12b',
+                    'x-rapidapi-host': 'daddyjokes.p.rapidapi.com'
+                }
+            };
+            
+            try {
+                const response = await fetch(url, options);
+                const result = await response.json();
+                document.getElementById('jokeText').innerHTML = result.joke || "No joke available.";
+            } catch (error) {
+                console.error(error);
+                document.getElementById('jokeText').innerHTML = "Failed to fetch a joke.";
+            }
+        };
+
+        
+        fetchJoke();
+    </script>
+</body>
+</html>
+

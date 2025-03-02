@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Cart</title>
+    <style>
+        /* Add to Cart Page Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 8px;
+        
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 20px;
+        }
+        
+        .cart-item-details {
+            flex-grow: 1;
+        }
+        
+        .cart-item-details h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-details p {
+            margin: 0;
+            color: #555;
+        }
+        
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        
+        .remove-btn {
+            background-color: #ff5722;
+            color: #fff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+       
+        
+        .total-container {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        
+        .total-container p {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .checkout-btn {
+            background-color: #ffa400;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .checkout-btn:hover {
+            background-color: #e69500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Cart</h1>
+        
+        <div class="cart-item">
+            <img src="pizza-with-eggplant-tomato-topping.jpg" alt="Pizza Image">
+            <div class="cart-item-details">
+                <h3>Pepperoni Pizza</h3>
+                <p>$15.99</p>
+            </div>
+            <div class="cart-item-actions">
+                <input type="number" class="quantity-input" value="1" min="1">
+                <button class="remove-btn">Remove</button>
+            </div>
+        </div>
+        
+        <div class="cart-item">
+            <img src="pizza-pizza-filled-with-tomatoes-salami-olives.jpg" alt="Pizza Image">
+            <div class="cart-item-details">
+                <h3>Veggie Pizza</h3>
+                <p>$12.99</p>
+            </div>
+            <div class="cart-item-actions">
+                <input type="number" class="quantity-input" value="1" min="1">
+                <button class="remove-btn">Remove</button>
+            </div>
+        </div>
+        <div class="cart-item">
+            <img src="pepperoni-pizza-with-mushrooms-table.jpg" alt="Pizza Image">
+            <div class="cart-item-details">
+                <h3>Veggie Pizza</h3>
+                <p>$12.99</p>
+            </div>
+            <div class="cart-item-actions">
+                <input type="number" class="quantity-input" value="1" min="1">
+                <button class="remove-btn">Remove</button>
+            </div>
+        </div>
+        
+        <div class="total-container">
+            <p>Total: $28.98</p>
+        </div>
+        
+        <a href="checkout.html" class="checkout-btn">Proceed to Checkout</a>
+    </div>
+</body>
+</html>

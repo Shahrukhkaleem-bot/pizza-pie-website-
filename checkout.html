@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="checkout.css"> 
+
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Pizza Pie</a>
+        <nav>
+            <a href="pizza.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="about.html">About</a>
+            <a href="checkout.html" class="active">Checkout</a>
+        </nav>
+    </header>
+
+    <section class="checkout">
+        <div class="checkout-container">
+            <h2>Checkout</h2>
+            <form>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <textarea id="address" name="address" rows="4" placeholder="Enter your shipping address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="payment">Payment Method</label>
+                    <select id="payment" name="payment" required>
+                        <option value="creditCard">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="cashOnDelivery">Cash on Delivery</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="orderNotes">Order Notes</label>
+                    <textarea id="orderNotes" name="orderNotes" rows="4" placeholder="Add any additional instructions"></textarea>
+                </div>
+                <a href="order placed.html" class="checkout-btn">Place Order</a>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p class="copyright">&copy; 2024 Pizza Pie. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
